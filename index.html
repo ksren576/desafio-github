@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +10,20 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Desafío 2</title>
 </head>
+
 <body>
     <div class="mx-auto w-25 mt-5">
         <img src="./assets/img/1 J8O2xd9ZqxWr2x6EP4MHmg.png" alt="github" class="img-fluid">
     </div>
     <div class="container my-5">
         <h1 class="text-center mb-4">Busqueda de Usuarios en GitHub y sus Repositorios</h1>
-        <form onsubmit="return false;" >
+        <form onsubmit="return false;">
             <div class="form-group">
-              <label for="nombre">Nombre de Usuario</label>
-              <input type="text" class="form-control" id="nombre" aria-describedby="nombreUser" placeholder="Nombre de Usuario">
-              <small id="nombreUser" class="form-text text-muted">Escriba el nombre del usuario de GitHub que desea buscar.</small>
+                <label for="nombre">Nombre de Usuario</label>
+                <input type="text" class="form-control" id="nombre" aria-describedby="nombreUser"
+                    placeholder="Nombre de Usuario">
+                <small id="nombreUser" class="form-text text-muted">Escriba el nombre del usuario de GitHub que desea
+                    buscar.</small>
             </div>
             <div class="row">
                 <div class="col">
@@ -28,20 +32,36 @@
                 </div>
                 <div class="col">
                     <label for="nombre">Repositorios por Páginas</label>
-                    <input type="text" class="form-control" placeholder="Número de Rrepositorio por Página" id="repoPagina">
+                    <input type="text" class="form-control" placeholder="Número de Rrepositorio por Página"
+                        id="repoPagina">
                 </div>
             </div>
-            <button class="btn btn-primary mt-5 mx-auto d-block w-25">Enviar</button>
-          </form>
+            <button id="btnEnviar" class="btn btn-primary mt-5 mx-auto d-block w-25">Enviar</button>
+        </form>
     </div>
     <hr>
-    <div class="container mt-3">
+    <div class="container">
+        <div id="alerta" class="alert alert-warning d-none" role="alert">
+            <b>Atención:</b> El usuario no existe.
+        </div>
+    </div>
+    <div id="resultados" class="container mt-3 d-none">
         <h1 class="text-center">Resultados</h1>
-        <div id="resultados"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="text-left">Datos de Usuario</h4>
+                <div id="datosUsuario"></div>
+            </div>
+            <div class="col-md-6">
+                <h4 class="text-right">Nombre de repositorios</h4>
+                <div id="repositorios" class="text-right"></div>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
